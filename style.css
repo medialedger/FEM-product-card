@@ -27,6 +27,9 @@ body {
 	flex-direction: column;
 	justify-content: center;
 }
+picture {
+	display: block;
+}
 img {
 	display: block;
 	width: 100%;
@@ -40,14 +43,20 @@ article {
 	overflow: hidden;
 	margin: 1em auto;
 }
-article picture {
-	display: block;
-}
 article img {
 	aspect-ratio: 686/480;
 }
-article .cnt-box {
+article ul {
+	margin: 0;
 	padding: 1.5em;
+	list-style-type: none;
+}
+article .cat {
+	color: var(--color-secondary);
+	font-size: .75em;
+	text-transform: uppercase;
+	letter-spacing: .4em;
+	margin: 0 0 1em;
 }
 article h2 {
 	font-family: var(--font-family-serif);
@@ -55,22 +64,11 @@ article h2 {
 	line-height: 1;
 	margin: 0;
 }
-article p {
+article .desc p {
 	color: var(--color-secondary);
-	margin: 0;
-	line-height: 1;
-	font-weight: 500;
-}
-article .desc {
 	font-size: .875em;
 	line-height: 1.6;
 	margin: 1em 0;
-}
-article .cat {
-	font-size: .75em;
-	text-transform: uppercase;
-	letter-spacing: .4em;
-	margin: 0 0 1em;
 }
 article .price {
 	font-family: var(--font-family-serif);
@@ -105,21 +103,22 @@ article button {
 @media screen and (min-width: 42em) {
 	article {
 		max-width: 37.5em;
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 		align-items: center;
-	}
-	article picture {
-		width: 50%;
 	}
 	article img {
 		aspect-ratio: 600/900;
 	}
-	article .cnt-box {
-		padding: 2em;
-		width: 50%;
+	article ul {
+		padding: 0 2em;
+	}
+}
+@media screen and (hover : hover) {
+	article button {
+		transition: background-color .3s;
 	}
 	article button:hover {
-		transition: .3s;
 		background-color: var(--color-accent-hover);
 		cursor: pointer;
 	}
